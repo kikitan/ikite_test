@@ -213,7 +213,7 @@ var kiteImg = new Image;
       didBirdCollideWithBall: function (left, top, right, bottom,
                                          snailBomb, context) {
          // Determine if the center of the snail bomb lies within
-         // the runner's bounding box  
+         // the kite bounding box  
 
          context.beginPath();
          context.rect(left, top, right - left, bottom - top);
