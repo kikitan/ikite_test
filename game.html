@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>iKite</title>
+<!--<script src="script/jquery-1.5.1.min.js"></script>-->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>	
+<link rel="stylesheet" href="css/style.css" />
+
+<style type="text/css">	
+
+	
+#black{
+	position:relative;
+	left:76px;
+	top:69px;
+	width:714px;
+	height:522px;
+	overflow:hidden;
+}
+
+             
+#caption{
+	background:url('images/bg.jpg') no-repeat;	
+	width:714px;
+	height:522px;
+}
+
+#canvas{
+    position: absolute;
+	  top:17px;
+	  overflow:hidden;
+         }
+#msg{
+    position: absolute;
+	  top:0;
+	  overflow:hidden;
+    z-index:10;
+    display:none;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<!--************************ipad start*******************************-->
+<div id="ipad">
+<a href="ipad.html"><div id="home"></div></a>
+<!--************************screen start*******************************-->
+       <!--<span id="beta">waiting for value</span><br>
+       <span id="velocity">waiting for value</span><br>
+       <button type="button" onclick="changeDirectionFunc();">Change Direction!</button>--!>
+       <div id="msg">dd</div>
+       <div id="black" class="zoomOut"> 
+            <div class="header"></div>
+            <div id="iKite">
+            <canvas id="canvas" width="714" height="502">
+               Canvas not supported
+            </canvas>
+            </div>
+       </div>   
+<!--************************screen end*******************************-->   
+</div>
+<!--************************ipad end*******************************-->
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="js/script.js"></script>
+<script src='js/requestNextAnimationFrame.js'></script>
+<script src='js/sprites.js'></script>
+<script src="js/ball.js"></script>
+<script src="js/utils.js"></script>
+<script src='js/kitegame.js'></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
+
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Flying Kite</title>
+<!--<script src="script/jquery-1.5.1.min.js"></script>-->
+
+<link rel="stylesheet" href="css/style.css" />
+
+<style type="text/css">	
+
+	
+#black{
+	position:relative;
+	left:76px;
+	top:69px;
+	width:714px;
+	height:522px;
+	overflow:hidden;
+}
+
+
+#caption{
+	background:url(images/bg.jpg);
+	width:100%;
+	height:522px;
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+<!--************************ipad start*******************************-->
+<div id="ipad">
+<a href="ipad.html"><div id="home"></div></a>
+<!--************************screen start*******************************-->
+       <div id="black" class="zoomOut"> 
+        
+            <div class="header"></div>
+            
+            <div id="iKite">
+            <div id="caption">
+            <!--<img id="ball" src = "images/kite.png" alt="The ball"/>-->
+            <canvas id="canvas" width="714" height="522">
+                     Canvas not supported
+            </canvas>
+              <div>
+                   <a href='Home.html'> <img class="nav"src="images/icons/nav.png" /></a>
+              </div
+            </div>
+            </div>
+
+        </div>   
+<!--************************screen end*******************************-->   
+</div>
+<!--************************ipad end*******************************-->
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="js/script.js"></script>
+
+
+<script src="js/utils.js"></script>
+<script src="js/ball.js"></script>
+    
+    <script>
+    window.onload = function () {
+      var canvas = document.getElementById('canvas'),
+          context = canvas.getContext('2d'),
+          mouse = utils.captureMouse(canvas),
+          ball = new Ball(),
+          spring = 0.03,
+          friction = 0.95,
+          vx = 0,
+          vy = 0;
+          var img = new Image;
+          img.src = "images/kite.png";
+          
+
+      (function drawFrame () {
+        window.requestAnimationFrame(drawFrame, canvas);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        var dx = mouse.x - ball.x,
+            dy = mouse.y - ball.y,
+            ax = dx * spring,
+            ay = dy * spring;
+
+        vx += ax;
+        vy += ay;
+        vx *= friction;
+        vy *= friction;
+        ball.x += vx;
+        ball.y += vy;
+        //ball.draw(context);
+        context.drawImage(img,ball.x,ball.y);
+      }());
+    };
+    </script>
+
+</body>
+
+
+
+</html>
+
+
